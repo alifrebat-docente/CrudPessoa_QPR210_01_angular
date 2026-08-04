@@ -1,0 +1,57 @@
+#menu{
+    width: 800px;
+    height: 60px;
+    margin: 0px auto;
+    padding: 5px;
+    background-color: var(--primaria);
+    color: var(--branca);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo,#nav-menu, #menu-lnk{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#logo{
+    width: 20%;
+    height: 100%;
+}
+
+#nav-menu{
+    width: 75%;
+    height: 100%;
+}
+
+#menu-lnk{
+    width: 100%;
+    height: 100%;
+}
+
+#menu ul {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    list-style: none;
+}
+
+#menu ul li{
+    padding: 0px 15px;
+}
+
+/*FORMATANDO LINKS*/
+a:link, a:visited, a:active{
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: var(--branca);
+    transition: opacity 0.5s ease;
+}
+
+a:hover{
+    opacity: 0.5;
+}
