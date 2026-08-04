@@ -1,7 +1,7 @@
 #menu{
     width: 800px;
     height: 60px;
-    margin: 0px auto;
+    margin: 20px auto;
     padding: 5px;
     background-color: var(--primaria);
     color: var(--branca);
