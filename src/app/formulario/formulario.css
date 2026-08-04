@@ -1,0 +1,56 @@
+#div-form{
+    width: 800px;
+    min-height: 600px;
+    margin: 0px auto;
+    padding: 5px;
+}
+
+label, select{
+    display: block;
+    padding: 10px 0px;
+    margin: 10px 0px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+
+input{
+    padding: 10px;
+}
+
+.elem-form-01{
+    width: 680px;
+}
+
+.elem-form-02{
+    width: 380px;
+}
+
+#div-btns{
+    width: 800px;
+    height: 80px;
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    width: 180px;
+    height: 35px;
+    border: none;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+#btnAdd{
+    margin-right: 10px;
+    background-color: var(--primaria);
+    color: var(--branca);
+}
+
+#btnLimpar{
+    margin-left: 10px;
+    background-color: var(--cor-botao01);
+    color: var(--branca);
+}
