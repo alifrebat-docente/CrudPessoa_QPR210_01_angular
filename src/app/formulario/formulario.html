@@ -1,1 +1,41 @@
-<p>formulario works!</p>
+<div id="div-form">
+
+    <form id="form-pessoa">
+        <label for="nome">Nome*</label>
+        <input type="text" name="nome" id="nome" class="elem-form-01" maxlength="70" required placeholder="Informe o nome">
+
+        <label for="email">Email*</label>
+        <input type="email" name="email" id="email" class="elem-form-01" maxlength="100" required
+            placeholder="Informe o email">
+
+        <label for="cpf">CPF*</label>
+        <input type="number" name="cpf" id="cpf" class="elem-form-02" maxlength="100" required placeholder="Informe o cpf">
+
+        <label for="data-nascimento">Data Nascimento*</label>
+        <input type="date" name="data-nascimento" id="data-nascimento" class="elem-form-02" required>
+
+        <label for="uf">UF*</label>
+        <select name="uf" id="uf" class="elem-form-02">
+            <option value=""> Selecione uma UF </option>
+            <option value="Se"> Sergipe </option>
+            <option value="ba"> Bahia </option>
+        </select>
+
+        <label for="cidade">Cidade*</label>
+        <select name="cidade" id="cidade" class="elem-form-02">
+            <option value="Aracaju"> Aracaju </option>
+            <option value="Barra dos Coqueiros"> Barra dos Coqueiros </option>
+            <option value="São Cristóvão"> São Cristóvão </option>
+        </select>
+
+        <div id="div-btns">
+            <button type="button" id="btnAdd"> Salvar </button>
+            <button type="reset" id="btnLimpar"> Limpar </button>
+        </div>
+
+
+
+    </form>
+
+
+</div>
