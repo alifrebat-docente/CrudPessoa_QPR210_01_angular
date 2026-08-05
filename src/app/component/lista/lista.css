@@ -1,0 +1,77 @@
+#div-lista {
+    width: 980px;
+    min-height: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    color: var(--primaria);
+}
+
+h1 {
+    text-align: center;
+    padding: 20px 0px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.div-item-pessoa,
+.item-pessoa,
+.btns-lista {
+    display: flex;
+    align-items: center;
+}
+
+.div-item-pessoa {
+    width: 100%;
+    height: 100px;
+    margin: 20px 0px;
+    padding: 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--primaria);
+}
+
+.item-pessoa {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+}
+
+.btns-lista {
+    width: 20%;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btns-lista a {
+    padding: 8px 0px;
+}
+
+/*FORMATAÇÃO DOS BOTÕES*/
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--branca);
+    width: 100px;
+    text-align: center;
+    margin: 8px 0px;
+    transition: opacity 0.5s ease;
+    letter-spacing: 3px;
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
+.lnk-editar {
+    background-color: var(--primaria);
+    color: var(--branca);
+}
+
+.lnk-excluir {
+    background-color: var(--cor-botao01);
+}
