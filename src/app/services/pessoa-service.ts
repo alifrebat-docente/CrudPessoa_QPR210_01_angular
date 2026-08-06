@@ -9,20 +9,24 @@ export class PessoaService {
 
     adicionar(pessoa: Pessoa) {
         this.pessoas.push(pessoa)
-        localStorage.setItem('pessoasStorage', JSON.stringify(this.pessoas))
+        //localStorage.setItem('pessoasStorage', JSON.stringify(this.pessoas))
     }
 
     listar() {
-        const dados = localStorage.getItem('pessoasStorage');
+        /*const dados = localStorage.getItem('pessoasStorage');
 
         if (dados) {
             this.pessoas = JSON.parse(dados);
         } else {
             this.pessoas = [];
-        }
+        }*/
 
         return this.pessoas;
     }
 
+
+    tamanhoArray():number{
+        return this.pessoas.length
+    }
 
 }
