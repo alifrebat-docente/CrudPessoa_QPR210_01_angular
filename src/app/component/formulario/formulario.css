@@ -41,6 +41,7 @@ button{
     border: none;
     font-size: 16px;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 #btnAdd{
