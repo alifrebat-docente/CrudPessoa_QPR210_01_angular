@@ -10,8 +10,6 @@ import { PessoaService } from '../../services/pessoa-service';
   styleUrl: './formulario.css',
 })
 export class Formulario {
-
-
   id = 0
   nome = ''
   email = ''
@@ -22,16 +20,34 @@ export class Formulario {
 
   salvar() {
 
-    console.log(this.nome, this.email, this.cpf, this.dataNascimento)
 
-    this.pessoaService.adicionar({
-      
-      id: 0,
-      nome: this.nome,
-      email: this.email,
-      cpf: this.cpf,
-      dataNascimento: this.dataNascimento
-    })
+    console.log(this.nome, this.email, this.cpf, this.dataNascimento)
+    const pessoa = new Pessoa()
+    pessoa.id = this.pessoaService.tamanhoArray() + 1 //ARMENGANDO A GERAÇÃO DO ID
+    pessoa.nome = this.nome
+    pessoa.email = this.email
+    pessoa.cpf = this.cpf
+    pessoa.dataNascimento = this.dataNascimento
+
+    this.pessoaService.adicionar( 
+      pessoa
+      /*{
+        id: 0,
+        nome: this.nome,
+        email: this.email,
+        cpf: this.cpf,
+        dataNascimento: this.dataNascimento
+      }*/
+    )
+
+    this.limpaAtributos()
+  }
+
+  limpaAtributos(){
+    this.nome = ''
+    this.email = ''
+    this.cpf = 0.0
+    this.dataNascimento = ''
   }
 
 
