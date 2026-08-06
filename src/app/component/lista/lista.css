@@ -45,33 +45,34 @@ h1 {
     flex-direction: column;
 }
 
-.btns-lista a {
-    padding: 8px 0px;
-}
 
 /*FORMATAÇÃO DOS BOTÕES*/
-a:link,
-a:visited,
-a:active {
+.btns-lista .lnk-btn {
+    margin: 8px 0px;
     text-decoration: none;
     text-transform: uppercase;
     color: var(--branca);
     width: 100px;
+    height: 35px;
     text-align: center;
     margin: 8px 0px;
+    padding: 5px;
     transition: opacity 0.5s ease;
     letter-spacing: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-a:hover {
+.lnk-btn:hover {
     opacity: 0.5;
 }
 
-.lnk-editar {
+a.lnk-editar {
     background-color: var(--primaria);
-    color: var(--branca);
 }
 
-.lnk-excluir {
+a.lnk-excluir {
     background-color: var(--cor-botao01);
 }
