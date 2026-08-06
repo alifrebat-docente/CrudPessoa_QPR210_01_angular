@@ -19,8 +19,6 @@ export class Formulario {
   constructor(private pessoaService: PessoaService) { }
 
   salvar() {
-
-
     console.log(this.nome, this.email, this.cpf, this.dataNascimento)
     const pessoa = new Pessoa()
     pessoa.id = this.pessoaService.tamanhoArray() + 1 //ARMENGANDO A GERAÇÃO DO ID
