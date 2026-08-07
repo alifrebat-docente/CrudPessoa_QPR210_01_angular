@@ -1,44 +1,80 @@
-<div id="div-lista">
-    <h1> Lista Pessoa </h1>
+<!-- Div principal que contém a lista de pessoas cadastradas. -->
+<div id="div-lista-pessoas">
 
-    <div id="div-lista-pessoas">
-        @for(elem of listar(); track elem.id ){
+    <!--
+        Percorre a lista de pessoas retornada pelo método listar().
+        O track elem.id informa ao Angular que cada item será identificado pelo ID,
+        melhorando o desempenho na atualização da lista.
+    -->
+    @for(elem of listar(); track elem.id ){
+
+        <!-- Div que representa uma pessoa da lista. -->
         <div class="div-item-pessoa">
+
+            <!-- Exibe os dados da pessoa. -->
             <span class="item-pessoa">
-                {{elem.id}} - {{elem.nome}} - {{elem.cpf}} - {{elem.dataNascimento}} - {{elem.email}} </span>
+                {{elem.id}} -
+                {{elem.nome}} -
+                {{elem.cpf}} -
+                {{elem.dataNascimento}} -
+                {{elem.email}}
+            </span>
+
+            <!-- Área dos botões de ação. -->
             <span class="btns-lista">
-                    <a class="lnk-btn lnk-editar" (click)="buscarPorId(elem)"> Editar </a>
-                    <a class="lnk-btn lnk-excluir"  (click)="exluir(elem)"> Excluir </a>
-                </span>
+
+                <!--
+                    Ao clicar, chama o método buscarPorId()
+                    para abrir a tela de edição da pessoa.
+                -->
+                <a class="lnk-btn lnk-editar" (click)="buscarPorId(elem)">
+                    Editar
+                </a>
+
+                <!--
+                    Ao clicar, chama o método exluir()
+                    para remover a pessoa da lista.
+                -->
+                <a class="lnk-btn lnk-excluir" (click)="exluir(elem)">
+                    Excluir
+                </a>
+
+            </span>
+
         </div>
-        }@empty{
+
+    }
+
+    <!--
+        Executado quando a lista estiver vazia.
+        Exibe uma mensagem informando que não existem registros.
+    -->
+    @empty{
 
         <div class="div-item-pessoa">
             NENHUM REGISTRO NA LISTA
         </div>
-        }
+
+    }
 
 
-        <!--<div class="div-item-pessoa">
-            <span class="item-pessoa">
-                1 - Maria Flor - 123456789 - 10/05/2000
-            </span>
-            <span class="btns-lista">
-                <a class="lnk-btn lnk-editar"> Editar </a>
-                <a class="lnk-btn lnk-excluir"> Excluir </a>
-            </span>
-        </div>
+    <!--
+        Código comentado de exemplos fixos de pessoas.
+        Ele não é executado porque está dentro de um comentário HTML.
+        Era utilizado provavelmente para testar o layout antes de buscar dados reais.
+    -->
 
-        <div class="div-item-pessoa">
-            <span class="item-pessoa">
-                1 - Maria Flor - 123456789 - 10/05/2000
-            </span>
-            <span class="btns-lista">
-                <a class="lnk-btn lnk-editar"> Editar </a>
-                <a class="lnk-btn lnk-excluir"> Excluir </a>
-            </span>
-        </div>-->
+    <!--
+    <div class="div-item-pessoa">
+        <span class="item-pessoa">
+            1 - Maria Flor - 123456789 - 10/05/2000
+        </span>
+
+        <span class="btns-lista">
+            <a class="lnk-btn lnk-editar"> Editar </a>
+            <a class="lnk-btn lnk-excluir"> Excluir </a>
+        </span>
     </div>
-
+    -->
 
 </div>

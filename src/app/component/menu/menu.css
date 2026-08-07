@@ -1,57 +1,127 @@
-#menu{
-    width: 1000px;
-    height: 60px;
-    margin: 20px auto;
-    padding: 5px;
+/*
+Define o estilo principal do menu de navegação.
+*/
+#menu {
+    width: 1000px; /* Define a largura do menu. */
+    height: 60px; /* Define a altura do menu. */
+    margin: 20px auto; /* Centraliza o menu e adiciona margem vertical. */
+    padding: 5px; /* Espaçamento interno do menu. */
+
+    /* Define a cor de fundo usando uma variável CSS. */
     background-color: var(--primaria);
+
+    /* Define a cor dos textos como branca. */
     color: var(--branca);
+
+    /* Ativa o modelo flexível de organização. */
     display: flex;
+
+    /* Centraliza os elementos verticalmente. */
     align-items: center;
+
+    /* Distribui os elementos deixando espaço entre eles. */
     justify-content: space-between;
 }
 
-#logo,#nav-menu, #menu-lnk{
+
+/*
+Aplica flexbox aos elementos principais do menu.
+Centraliza os conteúdos horizontal e verticalmente.
+*/
+#logo,
+#nav-menu,
+#menu-lnk {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
-#logo{
-    width: 20%;
-    height: 100%;
+
+/*
+Área destinada ao logo da aplicação.
+*/
+#logo {
+    width: 20%; /* Ocupa 20% da largura do menu. */
+    height: 100%; /* Ocupa toda a altura disponível. */
 }
 
-#nav-menu{
-    width: 75%;
-    height: 100%;
+
+/*
+Área onde ficam os links de navegação.
+*/
+#nav-menu {
+    width: 75%; /* Ocupa 75% da largura do menu. */
+    height: 100%; /* Ocupa toda a altura disponível. */
 }
 
-#menu-lnk{
-    width: 100%;
-    height: 100%;
+
+/*
+Lista que contém os links do menu.
+*/
+#menu-lnk {
+    width: 100%; /* Ocupa toda a largura disponível. */
+    height: 100%; /* Ocupa toda a altura disponível. */
 }
 
+
+/*
+Configura a lista de opções do menu.
+*/
 #menu ul {
-    display: flex;
-    align-items: center;
-    justify-content: end;
+    display: flex; /* Coloca os itens lado a lado. */
+    align-items: center; /* Centraliza verticalmente. */
+    justify-content: end; /* Alinha os itens no final da linha. */
+
+    /* Remove os marcadores padrão da lista. */
     list-style: none;
 }
 
-#menu ul li{
-    padding: 0px 15px;
+
+/*
+Define o espaçamento entre os itens do menu.
+*/
+#menu ul li {
+    padding: 0px 15px; /* Espaço interno horizontal dos itens. */
 }
 
-/*FORMATANDO LINKS*/
-a:link, a:visited, a:active{
+
+/*
+FORMATANDO LINKS
+*/
+
+
+/*
+Estilo dos links:
+- link: link ainda não visitado.
+- visited: link já visitado.
+- active: link no momento do clique.
+*/
+a:link,
+a:visited,
+a:active {
+
+    /* Remove o sublinhado dos links. */
     text-decoration: none;
+
+    /* Define o tamanho da fonte. */
     font-size: 16px;
+
+    /* Transforma o texto em letras maiúsculas. */
     text-transform: uppercase;
+
+    /* Define a cor do texto. */
     color: var(--branca);
+
+    /* Cria uma transição suave no efeito hover. */
     transition: opacity 0.5s ease;
 }
 
-a:hover{
+
+/*
+Efeito aplicado quando o mouse passa sobre o link.
+*/
+a:hover {
+
+    /* Diminui a opacidade do link. */
     opacity: 0.5;
 }

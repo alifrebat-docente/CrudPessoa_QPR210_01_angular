@@ -1,38 +1,148 @@
-<div id="div-form">
+<!-- Formulário responsável pelo cadastro e edição de uma pessoa. -->
+<form id="form-pessoa">
 
-    <form id="form-pessoa">
-        <label for="nome">Nome*</label>
-        <input type="text" name="nome" id="nome" class="elem-form-01" maxlength="70" [(ngModel)] = "nome" required placeholder="Informe o nome">
+    <!-- Campo para informar o nome da pessoa. -->
+    <label for="nome">Nome*</label>
 
-        <label for="email">Email*</label>
-        <input type="email" name="email" id="email" class="elem-form-01" maxlength="100" [(ngModel)] = "email" required
-            placeholder="Informe o email">
+    <!--
+        Campo de texto para o nome.
+        [(ngModel)] conecta o campo com a variável "nome" do componente.
+        required torna o preenchimento obrigatório.
+    -->
+    <input 
+        type="text" 
+        name="nome" 
+        id="nome" 
+        class="elem-form-01" 
+        maxlength="70" 
+        [(ngModel)]="nome" 
+        required 
+        placeholder="Informe o nome"
+    >
 
-        <label for="cpf">CPF*</label>
-        <input type="number" name="cpf" id="cpf" class="elem-form-02" maxlength="100" [(ngModel)] = "cpf" required placeholder="Informe o cpf">
 
-        <label for="dataNascimento">Data Nascimento*</label>
-        <input type="date" name="dataNascimento" id="dataNascimento" [(ngModel)] = "dataNascimento" class="elem-form-02" required>
+    <!-- Campo para informar o e-mail. -->
+    <label for="email">Email*</label>
 
-        <label for="uf">UF*</label>
-        <select name="uf" id="uf" class="elem-form-02">
-            <option value=""> Selecione uma UF </option>
-            <option value="Se"> Sergipe </option>
-            <option value="ba"> Bahia </option>
-        </select>
+    <!--
+        Campo de e-mail.
+        O Angular atualiza automaticamente a variável "email".
+    -->
+    <input 
+        type="email" 
+        name="email" 
+        id="email" 
+        class="elem-form-01" 
+        maxlength="100" 
+        [(ngModel)]="email" 
+        required
+        placeholder="Informe o email"
+    >
 
-        <label for="cidade">Cidade*</label>
-        <select name="cidade" id="cidade" class="elem-form-02">
-            <option value="Aracaju"> Aracaju </option>
-            <option value="Barra dos Coqueiros"> Barra dos Coqueiros </option>
-            <option value="São Cristóvão"> São Cristóvão </option>
-        </select>
 
-       <div id="div-btns">
-            <button type="button" id="btnSalvar"(click)="save()"> {{edit ? 'Alterar' : 'Salvar'}} </button>
-            <button type="reset" id="btnLimpar" (click)="limpaAtributos()"> Limpar </button>
-        </div>
+    <!-- Campo para informar o CPF. -->
+    <label for="cpf">CPF*</label>
 
-    </form>
+    <!--
+        Campo numérico para o CPF.
+        O valor digitado é armazenado na variável "cpf".
+    -->
+    <input 
+        type="number" 
+        name="cpf" 
+        id="cpf" 
+        class="elem-form-02" 
+        maxlength="100" 
+        [(ngModel)]="cpf" 
+        required 
+        placeholder="Informe o cpf"
+    >
 
-</div>
+
+    <!-- Campo para informar a data de nascimento. -->
+    <label for="dataNascimento">Data Nascimento*</label>
+
+    <!--
+        Campo de data.
+        O valor é ligado à variável "dataNascimento".
+    -->
+    <input 
+        type="date" 
+        name="dataNascimento" 
+        id="dataNascimento" 
+        [(ngModel)]="dataNascimento" 
+        class="elem-form-02" 
+        required
+    >
+
+
+    <!-- Campo de seleção do estado (UF). -->
+    <label for="uf">UF*</label>
+
+    <!-- Lista de estados disponíveis. -->
+    <select name="uf" id="uf" class="elem-form-02">
+
+        <!-- Opção inicial sem valor selecionado. -->
+        <option value="">
+            Selecione uma UF
+        </option>
+
+        <!-- Opções de estados. -->
+        <option value="Se">
+            Sergipe
+        </option>
+
+        <option value="ba">
+            Bahia
+        </option>
+
+    </select>
+
+
+    <!-- Campo de seleção da cidade. -->
+    <label for="cidade">Cidade*</label>
+
+    <!-- Lista de cidades disponíveis. -->
+    <select name="cidade" id="cidade" class="elem-form-02">
+
+        <option value="Aracaju">
+            Aracaju
+        </option>
+
+        <option value="Barra dos Coqueiros">
+            Barra dos Coqueiros
+        </option>
+
+        <option value="São Cristóvão">
+            São Cristóvão
+        </option>
+
+    </select>
+
+
+    <!-- Área que contém os botões do formulário. -->
+    <div id="div-btns">
+
+        <!--
+            Botão de salvar.
+            Chama o método save() do componente.
+            O texto muda conforme o modo:
+            - Salvar: novo cadastro.
+            - Alterar: edição de pessoa.
+        -->
+        <button type="button" id="btnSalvar" (click)="save()">
+            {{edit ? 'Alterar' : 'Salvar'}}
+        </button>
+
+
+        <!--
+            Botão para limpar o formulário.
+            Executa o método limpaAtributos().
+        -->
+        <button type="reset" id="btnLimpar" (click)="limpaAtributos()">
+            Limpar
+        </button>
+
+    </div>
+
+</form>

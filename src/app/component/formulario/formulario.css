@@ -1,57 +1,124 @@
-#div-form{
+/*
+Define o estilo da área principal do formulário.
+Possui largura fixa, altura mínima e fica centralizada na página.
+*/
+#div-form {
     width: 800px;
     min-height: 600px;
     margin: 0px auto;
     padding: 5px;
 }
 
-label, select{
+
+/*
+Aplica estilo aos campos de texto (label) e listas de seleção (select).
+Eles ficam um abaixo do outro por causa do display block.
+*/
+label, select {
     display: block;
     padding: 10px 0px;
     margin: 10px 0px;
+
+    /* Transforma o texto em letras maiúsculas. */
     text-transform: uppercase;
+
+    /* Aumenta o espaço entre as letras. */
     letter-spacing: 3px;
+
+    /* Define o tamanho da fonte. */
     font-size: 14px;
 }
 
-input{
+
+/*
+Define o espaçamento interno dos campos de entrada.
+*/
+input {
     padding: 10px;
 }
 
-.elem-form-01{
+
+/*
+Classe usada nos campos maiores do formulário
+(exemplo: nome e email).
+*/
+.elem-form-01 {
     width: 680px;
 }
 
-.elem-form-02{
+
+/*
+Classe usada nos campos menores do formulário
+(exemplo: CPF, data, UF e cidade).
+*/
+.elem-form-02 {
     width: 380px;
 }
 
-#div-btns{
+
+/*
+Área que contém os botões do formulário.
+Organiza os botões no centro usando flexbox.
+*/
+#div-btns {
     width: 800px;
     height: 80px;
     margin: 20px 0px;
+
+    /* Ativa o modelo flexível de organização. */
     display: flex;
+
+    /* Centraliza os botões verticalmente. */
     align-items: center;
+
+    /* Centraliza os botões horizontalmente. */
     justify-content: center;
 }
 
-button{
+
+/*
+Estilo padrão aplicado a todos os botões.
+*/
+button {
     width: 180px;
     height: 35px;
+
+    /* Remove a borda padrão do botão. */
     border: none;
+
     font-size: 16px;
+
+    /* Deixa o texto em letras maiúsculas. */
     text-transform: uppercase;
+
+    /* Mostra o cursor de clique ao passar sobre o botão. */
     cursor: pointer;
 }
 
-#btnAdd{
+
+/*
+Estilo do botão de adicionar/salvar.
+*/
+#btnAdd {
     margin-right: 10px;
+
+    /* Usa a cor principal definida nas variáveis CSS. */
     background-color: var(--primaria);
+
+    /* Define a cor do texto como branca. */
     color: var(--branca);
 }
 
-#btnLimpar{
+
+/*
+Estilo do botão limpar.
+*/
+#btnLimpar {
     margin-left: 10px;
+
+    /* Usa a cor definida para botões secundários. */
     background-color: var(--cor-botao01);
+
+    /* Define a cor do texto como branca. */
     color: var(--branca);
 }

@@ -1,77 +1,137 @@
+/*
+Define o estilo da área principal da lista de pessoas.
+*/
 #div-lista {
-    width: 980px;
-    min-height: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    color: var(--primaria);
+    width: 980px; /* Define a largura da área da lista. */
+    min-height: 600px; /* Define uma altura mínima para o container. */
+    margin: 20px auto; /* Centraliza o elemento e adiciona espaço vertical. */
+    padding: 20px; /* Cria um espaço interno ao redor do conteúdo. */
+    color: var(--primaria); /* Define a cor principal do texto. */
 }
 
+
+/*
+Estilo do título da página.
+*/
 h1 {
-    text-align: center;
-    padding: 20px 0px;
-    text-transform: uppercase;
-    letter-spacing: 5px;
+    text-align: center; /* Centraliza o texto. */
+    padding: 20px 0px; /* Adiciona espaçamento acima e abaixo. */
+    text-transform: uppercase; /* Transforma o texto em letras maiúsculas. */
+    letter-spacing: 5px; /* Aumenta o espaço entre as letras. */
 }
 
+
+/*
+Aplica o modelo flexbox aos elementos da lista.
+Permite organizar os itens horizontalmente.
+*/
 .div-item-pessoa,
 .item-pessoa,
 .btns-lista {
     display: flex;
-    align-items: center;
+    align-items: center; /* Centraliza os elementos verticalmente. */
 }
 
+
+/*
+Define o estilo de cada item de pessoa da lista.
+*/
 .div-item-pessoa {
-    width: 100%;
-    height: 100px;
-    margin: 20px 0px;
-    padding: 10px;
+    width: 100%; /* Ocupa toda a largura disponível. */
+    height: 100px; /* Define a altura de cada item. */
+    margin: 20px 0px; /* Espaçamento entre os itens. */
+    padding: 10px; /* Espaçamento interno. */
+
+    /* Distribui o texto e os botões nas extremidades. */
     justify-content: space-between;
+
+    /* Cria uma linha separadora abaixo de cada pessoa. */
     border-bottom: 1px solid var(--primaria);
 }
 
+
+/*
+Define o espaço onde ficam as informações da pessoa.
+*/
 .item-pessoa {
-    width: 80%;
-    height: 100%;
+    width: 80%; /* Ocupa 80% da largura do item. */
+    height: 100%; /* Ocupa toda a altura disponível. */
+
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2em;
+    align-items: center; /* Centraliza verticalmente. */
+    justify-content: center; /* Centraliza horizontalmente. */
+
+    font-size: 2em; /* Aumenta o tamanho da fonte. */
 }
 
+
+/*
+Define a área dos botões de editar e excluir.
+*/
 .btns-lista {
-    width: 20%;
-    height: 100%;
-    justify-content: center;
+    width: 20%; /* Ocupa 20% da largura do item. */
+    height: 100%; /* Ocupa toda a altura disponível. */
+
+    justify-content: center; /* Centraliza os botões. */
+
+    /* Coloca os botões um abaixo do outro. */
     flex-direction: column;
 }
 
-/*FORMATAÇÃO DOS BOTÕES*/
+
+/*
+FORMATAÇÃO DOS BOTÕES
+*/
+
+/*
+Estilo geral dos links que funcionam como botões.
+*/
 .lnk-btn {
-    margin: 8px 0px;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: var(--branca);
-    width: 100px;
-    height: 35px;
-    text-align: center;
-    margin: 8px 0px;
-    padding: 5px;
+    margin: 8px 0px; /* Espaçamento vertical entre os botões. */
+    text-decoration: none; /* Remove o sublinhado do link. */
+    text-transform: uppercase; /* Deixa o texto em maiúsculo. */
+    color: var(--branca); /* Define a cor do texto. */
+
+    width: 100px; /* Largura do botão. */
+    height: 35px; /* Altura do botão. */
+
+    text-align: center; /* Centraliza o texto. */
+
+    padding: 5px; /* Espaçamento interno. */
+
+    /* Cria uma animação suave ao alterar a opacidade. */
     transition: opacity 0.5s ease;
-    letter-spacing: 3px;
-    cursor: pointer;
+
+    letter-spacing: 3px; /* Espaçamento entre letras. */
+
+    cursor: pointer; /* Mostra o cursor de clique. */
+
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Centraliza verticalmente. */
+    justify-content: center; /* Centraliza horizontalmente. */
 }
 
+
+/*
+Efeito ao passar o mouse sobre os botões.
+Reduz a opacidade deixando o botão mais transparente.
+*/
 .lnk-btn:hover {
     opacity: 0.5;
 }
 
+
+/*
+Cor do botão de editar.
+*/
 a.lnk-editar {
     background-color: var(--primaria);
 }
 
+
+/*
+Cor do botão de excluir.
+*/
 a.lnk-excluir {
     background-color: var(--cor-botao01);
 }

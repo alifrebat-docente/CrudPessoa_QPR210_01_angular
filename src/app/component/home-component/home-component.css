@@ -1,17 +1,49 @@
+/*
+Define o estilo da área principal da página inicial.
+*/
 #div-home {
+
+    /* Define a largura do container. */
     width: 1000px;
+
+    /* Define a altura do container. */
     height: 1000px;
+
+    /* Centraliza o elemento na página e adiciona margem vertical. */
     margin: 20px auto;
+
+    /* Define a cor do texto usando uma variável CSS. */
     color: var(--primaria);
+
+    /* Ativa o modelo flexível para organizar o conteúdo. */
     display: flex;
+
+    /* Centraliza o conteúdo verticalmente. */
     align-items: center;
+
+    /* Centraliza o conteúdo horizontalmente. */
     justify-content: center;
+
+    /* Define o tamanho da fonte do texto. */
     font-size: 5em;
 
+
+    /*
+    Cria uma borda ao redor da área inicial.
+    Usa a cor principal definida nas variáveis CSS.
+    */
     border: 2px solid var(--primaria);
 }
 
-#tito-pessoa{
+
+/*
+Define o estilo específico para a palavra "PESSOA".
+*/
+#tito-pessoa {
+
+    /* Altera a cor do texto usando a variável de cor do botão. */
     color: var(--botao02);
+
+    /* Deixa o texto em negrito. */
     font-weight: bold;
 }

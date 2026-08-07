@@ -1,24 +1,48 @@
+<!-- Define o cabeçalho da página, onde fica o menu de navegação. -->
 <header>
+
+    <!-- Container principal do menu. -->
     <div id="menu">
-        <div id="logo">Logo</div>
+
+        <!-- Área destinada ao logo da aplicação. -->
+        <div id="logo">
+            Logo
+        </div>
+
+        <!-- Área de navegação do menu. -->
         <nav id="nav-menu">
+
+            <!-- Lista de links de navegação. -->
             <ul id="menu-lnk">
+
+                <!-- Item do menu para acessar a página inicial. -->
                 <li>
+                    <!-- routerLink direciona para a rota /home sem recarregar a página. -->
                     <a routerLink="/home" class="lnk-rota">
                         Home
                     </a>
                 </li>
+
+                <!-- Item do menu para acessar o cadastro. -->
                 <li>
+                    <!-- Direciona para a rota de cadastro de pessoas. -->
                     <a routerLink="/cadastro" class="lnk-rota">
                         Cadastro
                     </a>
                 </li>
+
+                <!-- Item do menu para acessar a consulta/listagem. -->
                 <li>
+                    <!-- Direciona para a rota que exibe a lista de pessoas. -->
                     <a routerLink="/lista" class="lnk-rota">
                         Consulta
                     </a>
                 </li>
+
             </ul>
+
         </nav>
+
     </div>
+
 </header>
