@@ -7,9 +7,9 @@
             <span class="item-pessoa">
                 {{elem.id}} - {{elem.nome}} - {{elem.cpf}} - {{elem.dataNascimento}} - {{elem.email}} </span>
             <span class="btns-lista">
-                <a class="lnk-btn lnk-editar"> Editar </a>
-                <a class="lnk-btn lnk-excluir"> Excluir </a>
-            </span>
+                    <a class="lnk-btn lnk-editar" (click)="buscarPorId(elem)"> Editar </a>
+                    <a class="lnk-btn lnk-excluir"  (click)="exluir(elem)"> Excluir </a>
+                </span>
         </div>
         }@empty{
 
