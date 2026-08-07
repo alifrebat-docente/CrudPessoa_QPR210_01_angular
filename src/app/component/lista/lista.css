@@ -45,9 +45,8 @@ h1 {
     flex-direction: column;
 }
 
-
 /*FORMATAÇÃO DOS BOTÕES*/
-.btns-lista .lnk-btn {
+.lnk-btn {
     margin: 8px 0px;
     text-decoration: none;
     text-transform: uppercase;
