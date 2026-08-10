@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { Pessoa } from '../../models/pessoa';
 
 // Importa o serviço responsável por gerenciar as pessoas.
-import { PessoaService } from '../../services/pessoa-service';
+import { PessoaService } from '../../services/pessoa/pessoa-service';
 
 // Importa o ActivatedRoute para acessar parâmetros da URL.
 import { ActivatedRoute } from '@angular/router';
@@ -32,7 +32,7 @@ export class Formulario {
   id = 0;
   nome = '';
   email = '';
-  cpf = 0.0;
+  cpf = 0.0
   dataNascimento = '';
 
   // Armazena o ID da pessoa em edição.
@@ -90,7 +90,6 @@ export class Formulario {
 
   // Executado quando o componente é inicializado.
   ngOnInit() {
-
     // Obtém o parâmetro "id" da URL.
     const idPessoa = this.route.snapshot.paramMap.get('id');
 
@@ -105,19 +104,16 @@ export class Formulario {
       // Busca a pessoa pelo ID.
       this.pessoaService.buscarPorId(Number(idPessoa))
         .subscribe(objPessoa => {
-
           // Se encontrou a pessoa, carrega os dados no formulário.
           if (objPessoa) {
             this.carregaAtributos({ ...objPessoa });
           }
-
         });
     }
   }
 
   // Salva ou atualiza uma pessoa.
   save() {
-
     // Cria um objeto Pessoa.
     const pessoa = new Pessoa();
 
