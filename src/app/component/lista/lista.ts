@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 
 // Importa o serviço responsável por gerenciar as pessoas.
-import { PessoaService } from '../../services/pessoa-service';
+import { PessoaService } from '../../services/pessoa/pessoa-service';
 
 // Importa o modelo Pessoa.
 import { Pessoa } from '../../models/pessoa';
@@ -41,7 +41,6 @@ export class Lista {
 
     // Solicita confirmação antes de excluir.
     if (confirm("Tem certeza que deseja Excluir a Pessoa?")) {
-
       // Remove a pessoa pelo ID.
       this.pessoaService.excluir(Number(pObjPessoa.id));
     }
@@ -52,7 +51,6 @@ export class Lista {
 
   // Navega para a tela de edição da pessoa selecionada.
   buscarPorId(pObjPessoa: Pessoa) {
-
     // Redireciona para a rota "/cadastro/:id".
     this.router.navigate(['/cadastro', pObjPessoa.id]);
   }
