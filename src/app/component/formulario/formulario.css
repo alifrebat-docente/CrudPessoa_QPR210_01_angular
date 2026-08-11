@@ -2,7 +2,7 @@
 Define o estilo da área principal do formulário.
 Possui largura fixa, altura mínima e fica centralizada na página.
 */
-#div-form {
+#form-pessoa {
     width: 800px;
     min-height: 600px;
     margin: 0px auto;
