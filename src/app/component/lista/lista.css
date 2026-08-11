@@ -1,7 +1,7 @@
 /*
 Define o estilo da área principal da lista de pessoas.
 */
-#div-lista {
+#div-lista-pessoas{
     width: 980px; /* Define a largura da área da lista. */
     min-height: 600px; /* Define uma altura mínima para o container. */
     margin: 20px auto; /* Centraliza o elemento e adiciona espaço vertical. */
