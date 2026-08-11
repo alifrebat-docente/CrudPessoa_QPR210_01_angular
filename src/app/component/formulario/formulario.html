@@ -86,7 +86,7 @@
         </option>
         
         @for (elem of listaUfs; track elem.id) {
-            <option [ngValue]="elem">
+            <option [ngValue]="elem.id">
                 {{elem.sigla}} - {{elem.nome}}
             </option>
         }
