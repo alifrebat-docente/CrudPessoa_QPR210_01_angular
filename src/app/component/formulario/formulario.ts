@@ -13,6 +13,7 @@ import { PessoaService } from '../../services/pessoa/pessoa-service';
 // Importa o ActivatedRoute para acessar parâmetros da URL.
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   // Define o seletor do componente.
   selector: 'app-formulario',
@@ -44,8 +45,10 @@ export class Formulario {
   // Injeta o serviço de rotas e o serviço de pessoas.
   constructor(
     private route: ActivatedRoute,
-    private pessoaService: PessoaService
+    private pessoaService: PessoaService,
   ) { }
+
+  
 
   // Salva uma nova pessoa.
   salvar() {
