@@ -75,47 +75,35 @@
         required
     >
 
-
     <!-- Campo de seleção do estado (UF). -->
     <label for="uf">UF*</label>
 
     <!-- Lista de estados disponíveis. -->
-    <select name="uf" id="uf" class="elem-form-02">
+    <select name="uf" id="uf" [(ngModel)]="uf"  (change)="carregaMunicipiosSelect()" class="elem-form-02">
 
-        <!-- Opção inicial sem valor selecionado. -->
         <option value="">
             Selecione uma UF
         </option>
-
-        <!-- Opções de estados. -->
-        <option value="Se">
-            Sergipe
-        </option>
-
-        <option value="ba">
-            Bahia
-        </option>
+        
+        @for (elem of listaUfs; track elem.id) {
+            <option [ngValue]="elem.id">
+                {{elem.sigla}} - {{elem.nome}}
+            </option>
+        }
 
     </select>
 
-
     <!-- Campo de seleção da cidade. -->
-    <label for="cidade">Cidade*</label>
+    <label for="municipio">Município*</label>
 
     <!-- Lista de cidades disponíveis. -->
-    <select name="cidade" id="cidade" class="elem-form-02">
+    <select name="municipio" id="municipio"  [(ngModel)]="municipio" [disabled]="listaMunicipios.length === 0" class="elem-form-02">
 
-        <option value="Aracaju">
-            Aracaju
-        </option>
-
-        <option value="Barra dos Coqueiros">
-            Barra dos Coqueiros
-        </option>
-
-        <option value="São Cristóvão">
-            São Cristóvão
-        </option>
+        @for (elem of listaMunicipios; track elem.id) {
+            <option [ngValue]="elem.nome">
+                {{elem.nome}}
+            </option>
+        }
 
     </select>
 
