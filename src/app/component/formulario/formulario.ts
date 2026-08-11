@@ -13,6 +13,11 @@ import { PessoaService } from '../../services/pessoa/pessoa-service';
 // Importa o ActivatedRoute para acessar parâmetros da URL.
 import { ActivatedRoute } from '@angular/router';
 
+//Importando o serviço EstadoMunicipio
+import { UfMunicipioService } from '../../services/uf-municipios/uf-municipio-service';
+import { Estado } from '../../models/estado';
+import { Municipio } from '../../models/municipio';
+import { Observable } from 'rxjs';
 
 @Component({
   // Define o seletor do componente.
@@ -35,6 +40,10 @@ export class Formulario {
   email = '';
   cpf = 0.0
   dataNascimento = '';
+  uf = ''
+  municipio = ''
+  listaUfs: Estado[] = []
+  listaMunicipios: Municipio[] = []
 
   // Armazena o ID da pessoa em edição.
   idPessoaEdit = 0;
@@ -46,9 +55,10 @@ export class Formulario {
   constructor(
     private route: ActivatedRoute,
     private pessoaService: PessoaService,
+    private ufMunicipioService: UfMunicipioService
   ) { }
 
-  
+
 
   // Salva uma nova pessoa.
   salvar() {
@@ -93,6 +103,7 @@ export class Formulario {
 
   // Executado quando o componente é inicializado.
   ngOnInit() {
+
     // Obtém o parâmetro "id" da URL.
     const idPessoa = this.route.snapshot.paramMap.get('id');
 
@@ -113,6 +124,9 @@ export class Formulario {
           }
         });
     }
+
+    this.carregaEstadosSelect()
+
   }
 
   // Salva ou atualiza uma pessoa.
@@ -161,5 +175,44 @@ export class Formulario {
       this.pessoaService.editar(pessoa);
     }
   }
+
+  carregaEstadosSelect() {
+    this.ufMunicipioService.listaUF()
+      .subscribe({
+        next: (dadosUf) => {
+          this.listaUfs = [...dadosUf].sort((a, b) => a.nome.localeCompare(b.nome))
+        },
+        error: (msgErro) => {
+          console.log('Erro ao carregar os Estados', msgErro)
+        }
+      })
+  }
+
+  carregaMunicipiosSelect() {
+    if (!this.uf) {
+      this.municipio = ''
+      this.listaMunicipios = []
+
+      return
+    }
+
+    this.ufMunicipioService.listaMunicipios(Number(this.uf))
+      .subscribe({
+        next: (dadosMunicipio) => {
+          this.listaMunicipios = dadosMunicipio
+        },
+        error: (msgErro) => {
+          console.log('Erro ao carregar os municípios: ', msgErro)
+        }
+      }
+      )
+
+
+
+
+
+  }
+
+
 
 }
