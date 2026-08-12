@@ -1,4 +1,4 @@
 export class Municipio {
-    id?: number
-    nome?: string
+    id : number = 0
+    nome : string = ''
 }
