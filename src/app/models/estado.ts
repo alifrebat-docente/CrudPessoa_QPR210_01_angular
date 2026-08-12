@@ -1,5 +1,5 @@
 export class Estado {
-    id?: number
-    sigla?: string
+    id : number = 0
+    sigla : string = ''
     nome : string = ''
 }
