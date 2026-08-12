@@ -77,6 +77,8 @@ export class Formulario {
     pessoa.email = this.email;
     pessoa.cpf = this.cpf;
     pessoa.dataNascimento = this.dataNascimento;
+    pessoa.uf = this.uf;
+    pessoa.municipio = this.municipio
 
     // Adiciona a pessoa ao serviço.
     this.pessoaService.adicionar(pessoa);
@@ -91,6 +93,8 @@ export class Formulario {
     this.email = '';
     this.cpf = 0.0;
     this.dataNascimento = '';
+    this.uf = ''
+    this.municipio = ''
   }
 
   // Carrega os dados da pessoa nos campos do formulário.
@@ -99,6 +103,8 @@ export class Formulario {
     this.email = String(pessoa.email);
     this.cpf = Number(pessoa.cpf);
     this.dataNascimento = String(pessoa.dataNascimento);
+    this.uf = pessoa.uf
+    this.municipio = pessoa.municipio
   }
 
   // Executado quando o componente é inicializado.
@@ -114,6 +120,8 @@ export class Formulario {
     if (idPessoa) {
 
       this.edit = true;
+      
+      this.carregaEstadosSelect()
 
       // Busca a pessoa pelo ID.
       this.pessoaService.buscarPorId(Number(idPessoa))
@@ -139,6 +147,8 @@ export class Formulario {
     pessoa.email = this.email;
     pessoa.cpf = this.cpf;
     pessoa.dataNascimento = this.dataNascimento;
+    pessoa.uf = this.uf
+    pessoa.municipio = this.municipio
 
     // Verifica se está editando ou cadastrando.
     if (this.edit) {
@@ -181,6 +191,10 @@ export class Formulario {
       .subscribe({
         next: (dadosUf) => {
           this.listaUfs = [...dadosUf].sort((a, b) => a.nome.localeCompare(b.nome))
+
+          if(this.uf){
+            this.carregaMunicipiosSelect()
+          }
         },
         error: (msgErro) => {
           console.log('Erro ao carregar os Estados', msgErro)
@@ -196,7 +210,9 @@ export class Formulario {
       return
     }
 
-    this.ufMunicipioService.listaMunicipios(Number(this.uf))
+    const objUf = this.listaUfs.find(elem =>  elem.sigla === this.uf )
+
+    this.ufMunicipioService.listaMunicipios(Number(objUf?.id))
       .subscribe({
         next: (dadosMunicipio) => {
           this.listaMunicipios = dadosMunicipio
