@@ -120,7 +120,7 @@ export class Formulario {
     if (idPessoa) {
 
       this.edit = true;
-      
+
       this.carregaEstadosSelect()
 
       // Busca a pessoa pelo ID.
@@ -192,7 +192,7 @@ export class Formulario {
         next: (dadosUf) => {
           this.listaUfs = [...dadosUf].sort((a, b) => a.nome.localeCompare(b.nome))
 
-          if(this.uf){
+          if (this.uf) {
             this.carregaMunicipiosSelect()
           }
         },
@@ -210,7 +210,7 @@ export class Formulario {
       return
     }
 
-    const objUf = this.listaUfs.find(elem =>  elem.sigla === this.uf )
+    const objUf = this.listaUfs.find(elem => elem.sigla === this.uf)
 
     this.ufMunicipioService.listaMunicipios(Number(objUf?.id))
       .subscribe({
@@ -222,13 +222,6 @@ export class Formulario {
         }
       }
       )
-
-
-
-
-
   }
-
-
 
 }
